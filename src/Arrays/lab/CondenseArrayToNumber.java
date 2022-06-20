@@ -13,7 +13,6 @@ public class CondenseArrayToNumber {
                 .toArray();
 
         while (numbers.length > 1) {
-            int tempSum;
             int[] condensed = new int[numbers.length - 1];
 
             for (int i = 0; i < numbers.length - 1; i++) {

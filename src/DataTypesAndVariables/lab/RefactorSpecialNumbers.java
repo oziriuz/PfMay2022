@@ -17,10 +17,6 @@ public class RefactorSpecialNumbers {
                 current = current / 10;
             }
 
-//            boolean isSpecial = false;
-//            isSpecial = (sum == 5) || (sum == 7) || (sum == 11);
-//            System.out.printf("%d -> %b%n", i, isSpecial);
-
             String result;
 
             if (sum == 5 || sum == 7 || sum == 11) {
