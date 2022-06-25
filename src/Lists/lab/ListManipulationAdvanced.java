@@ -18,7 +18,11 @@ public class ListManipulationAdvanced {
         while (!input[0].equals("end")) {
             switch (input[0]) {
                 case "Contains":
-                    System.out.println(numbers.contains(Integer.parseInt(input[1])));
+                    if (numbers.contains(Integer.parseInt(input[1]))) {
+                        System.out.println("Yes");
+                    } else {
+                        System.out.println("No such number");
+                    }
                     break;
                 case "Print":
                     printEvenOrOdd(numbers, input[1]);
@@ -29,12 +33,50 @@ public class ListManipulationAdvanced {
                     }
                     break;
                 case "Filter":
-
+                    int number = Integer.parseInt(input[2]);
+                    System.out.println(filteredNumberFromList(numbers, input[1], number));
                     break;
                 default:
                     break;
             }
+
+            input = scanner.nextLine().split(" ");
         }
+    }
+
+    private static String filteredNumberFromList(List<Integer> list, String condition, int limit) {
+        String result = "";
+        switch (condition) {
+            case "<":
+                for (Integer item : list) {
+                    if (item < limit) {
+                        result += (item + " ");
+                    }
+                }
+                break;
+            case "<=":
+                for (Integer item : list) {
+                    if (item <= limit) {
+                        result += (item + " ");
+                    }
+                }
+                break;
+            case ">":
+                for (Integer item : list) {
+                    if (item > limit) {
+                        result += (item + " ");
+                    }
+                }
+                break;
+            case ">=":
+                for (Integer item : list) {
+                    if (item >= limit) {
+                        result += (item + " ");
+                    }
+                }
+                break;
+        }
+        return result;
     }
 
     private static int sumOfNumberInList(List<Integer> list) {
@@ -58,5 +100,6 @@ public class ListManipulationAdvanced {
                 }
             }
         }
+        System.out.println();
     }
 }
